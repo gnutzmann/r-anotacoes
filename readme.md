@@ -417,7 +417,7 @@ Retorna lista de grupos de dados instalados
 
 # **function `dim()`**
 
-> Retorna ou seta as dimensões de um objeto
+> Retorna ou seta as dimensões de uma matriz
 
 ## Sintaxe
 
@@ -505,3 +505,29 @@ Gera um vetor (amostra) de tamanho 10 contendo valores 0,1 aleatorios cuja proba
     * `length(vet) = 12`
 * Alterando valores em um indice especifico do vetor 
     * `vet[c(11,12)] = c(6,6)`
+
+# **MATRIZES**
+
+* Criando uma matriz com dados distribuidos por linha (byrow=T)
+    * `matr = matrix(c(1,2,3,4,5,6), nrow=2,ncol=3,byrow=T)`
+* Criando uma matriz com dados distribuidos por coluna (byrow=F)
+    * `matr = matrix(c(1,2,3,4,5,6), nrow=2,ncol=3,byrow=F)`
+* Nomeando as linhas e colunas de uma matriz
+    * `dimanmes(matr) = list(c("L1","L2","L3"),c("C1","C2","C3"))`
+* Alterando um valor especifico da matriz
+    * `matr[1,2] = 0`
+* Retornando dimensões da matriz
+    * `dim(matr)`
+
+# **LISTAS**
+
+> Lista são conjuntos de objetos de classe que podem ser diferentes, por exemplo matrizes, vetores e outras listas.
+
+* Criando uma lista
+    * `lista = list(USPersonalExpenditure, ability.cov$center, c(1,2,3,4,5), "Frase frase")` 
+* Colocando nome nos objetos de um lista de 4 itens
+    * `names(lista) = c("Matriz","VetZero","Vet12345","Texto")`        
+* Acessando o segundo objeto da lista
+    * `lista[[2]]`
+* Forma alternativa caso os itens da lista estejam nomeados
+    * `lista$nome-item`         
