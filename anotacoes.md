@@ -266,6 +266,155 @@ Importante:
 
 ----
 
+# **TIPOS DE DADOS**
+
+* Caracter
+* Numérico
+* Inteiro
+* Fator
+* Data    
+
+    **NA** representa o valor não disponível, ou seja, **NOT AVALIABLE**
+
+## Variáveis 
+
+    No R toda variável é tratada como um vetor. Ex.: a = 10 é um vetor com uma posição númerica.
+
+### Simbolos de atribuição de valores 
+
+* =
+    * `a = 10`    
+* ->
+    * `a -> 10`    
+* <-
+    * `10 <- a`    
+
+### Verificando o tipo das variáveis
+
+`class(variavel)`
+
+### Verificando o tipo pai das variáveis
+
+`typeof(variavel)`
+
+### Teste de tipos de dados
+
+`is.numeric(variavel)`
+`is.character(variavel)`
+`is.integer(variavel)`
+
+### Definir tipo de dados implicitamente
+
+### Tipo inteiro (integer)
+
+`idade = 35L`
+ou
+`idade = as.integer(35)`
+
+    O "as" pode ser usado com outros tipos.
+
+---
+
+# **Manipulação de dados do tipo data (Date)**
+
+> Para criar uma variavel com conteúdo do tipo Date é necessário passar em formato de caracter e converter para date.
+
+## Exemplo
+
+`data = as.Date("1979-07-10")`
+
+> Para saber a diferença entre duas datas basta fazer um subtração entre os dois valores.
+
+## Exemplo
+
+`nasc = as.Date("1979-07-10"); hoje = Sys.Date(); dif = hoje - nasc;dif;`
+
+O resultado é **"Time difference of 14491 days"**
+
+## Formatação de tipos data
+
+## Sintaxe
+
+`format(data,format="mascara")`
+
+## Exemplo
+
+`format(data,format="%d/%m/%Y")`
+
+Retorna o formato d/mm/aaaa
+
+`format(Sys.time(),format="%d/%m/%Y %H:%M:%S")`
+
+Retorna a data e hora atual no formato especificado.
+
+---
+
+# **function `paste()`**
+
+> Concatena duas ou mais strings 
+
+## Sintaxe 
+
+`paste(string1, string2, stringN, sep="separador")`
+
+## Exemplo
+
+`frase = paste("O cachorro","latiu",sep=" ")`
+
+Retorna "O cachorro latiu" para a variavel "frase".
+
+---
+
+# ** function `objects()` **
+
+> Lista todas variáveis em memória
+
+## Sintaxe
+
+`objects()`
+
+## Exemplo
+
+`objects()`
+
+Retorna a lista de objetos na memória
+
+---
+
+# ** function `rm()` **
+
+> Remove objetos da memória
+
+## Sintaxe
+
+`rm(variavel)`
+
+## Exemplo
+
+`rm(list=objects())`
+
+Remove todo objetos da memória
+
+---
+
+# **function `data()`**
+
+> Retorna todos grupos de dados carregados no R
+
+## Sintaxe
+
+`data()`
+
+## Exemplo
+
+`data()`
+`data(package = .packages(all.avaliable=TRUE))`
+
+Retorna lista de grupos de dados instalados
+
+---
+
+
 # **function `dim()`**
 
 > Retorna ou seta as dimensões de um objeto
@@ -312,6 +461,10 @@ Retorna um sumário de informações sobre a base de dados que acompanha a lingu
 
 Gera um vetor [1,10,15,20,25]
 
+`c(T,F,T,T,F)`
+
+Gera um vetor [TRUE,FALSE,TRUE,TRUE,FALSE]
+
 ---
 
 # **function `sample()`**
@@ -329,3 +482,26 @@ Gera um vetor [1,10,15,20,25]
 Gera um vetor (amostra) de tamanho 10 contendo valores 0,1 aleatorios cuja probabilidade de ocorrer 0 é de 50% e 1 também de 50%
 
 ----
+
+# **VETORES**
+
+* Criando um vetor
+    * `vet = c(1,2,3,4,5,6)`
+* Ordenando um vetor
+    * `sort(vet)`
+* Retornando o maior e menor valor de um vetor
+    * `max(vet);min(vet)`
+* Filtrando dados do vetor
+    * `vet[vet>3]` 
+* Mostrando a ordem dos valores no vetor
+    * `order(vet)`
+* Somando os valores de dois vetores
+    * `vet + vet`
+* Somando um valor a cada item do vetor
+    * `vet = vet + 5`
+* Retornando o tamanho do vetor
+    * `length(vet)`
+* Alterando o tamanho do vetor                
+    * `length(vet) = 12`
+* Alterando valores em um indice especifico do vetor 
+    * `vet[c(11,12)] = c(6,6)`
