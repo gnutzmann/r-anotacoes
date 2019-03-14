@@ -365,7 +365,7 @@ Retorna "O cachorro latiu" para a variavel "frase".
 
 ---
 
-# ** function `objects()` **
+# **function `objects()`**
 
 > Lista todas variáveis em memória
 
@@ -381,7 +381,7 @@ Retorna a lista de objetos na memória
 
 ---
 
-# ** function `rm()` **
+# **function `rm()`**
 
 > Remove objetos da memória
 
