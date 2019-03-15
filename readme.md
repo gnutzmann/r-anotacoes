@@ -506,6 +506,8 @@ Gera um vetor (amostra) de tamanho 10 contendo valores 0,1 aleatorios cuja proba
 * Alterando valores em um indice especifico do vetor 
     * `vet[c(11,12)] = c(6,6)`
 
+---
+
 # **MATRIZES**
 
 * Criando uma matriz com dados distribuidos por linha (byrow=T)
@@ -519,6 +521,8 @@ Gera um vetor (amostra) de tamanho 10 contendo valores 0,1 aleatorios cuja proba
 * Retornando dimensões da matriz
     * `dim(matr)`
 
+---
+
 # **LISTAS**
 
 > Lista são conjuntos de objetos de classe que podem ser diferentes, por exemplo matrizes, vetores e outras listas.
@@ -531,3 +535,41 @@ Gera um vetor (amostra) de tamanho 10 contendo valores 0,1 aleatorios cuja proba
     * `lista[[2]]`
 * Forma alternativa caso os itens da lista estejam nomeados
     * `lista$nome-item`         
+
+---
+
+# **DATA FRAME**
+
+> Data frames se assemelham a tabelas, ou seja, podem trazer dados de tipos diferentes em suas colunas.
+
+* Criando um data frame
+    * `id = c(1,2,3)`
+    * `nome = c("Diogo","Maria","João")`
+    * `idade = c(39L,25L,53L)`
+    * `cadastro_ativo = c(T,T,F)`
+    * `limite_credito = c(5000.00,10550.50,0)` 
+    * `clientes = data.frame(id,nome,idade,cadastro_ativo,limite_credito)`
+* Verificando o tipo de uma coluna do data frame
+    * `class(clientes$idade)`
+* Alterando os dados de um data frame via R Editor
+    * `fix(clientes)`
+* Abrindo o R Editor para alterar os dados do data frame e atribuindo o resultado alterado à outra variável
+    * `clientes_edit = edit(clientes)`
+
+--- 
+
+# **SÉRIE TEMPORAL**
+
+> Coleção de observações feitas sequencialmente ao longo do tempo
+
+* Criando uma série temporal
+    * `serie_temp = ts(c(1:60), start=c(2010,1), end=c(2014,12), frequency = 12 )`
+
+--- 
+
+# **FATOR**
+
+> Fatores são vetores de elementos numerados.
+
+* Criando um fator de meses do ano
+    * ` meses = factor(c(1:12), labels = c('jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'), ordered = TRUE)`
