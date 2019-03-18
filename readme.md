@@ -315,6 +315,97 @@ ou
 
 ---
 
+# **VETORES**
+
+* Criando um vetor
+    * `vet = c(1,2,3,4,5,6)`
+* Ordenando um vetor
+    * `sort(vet)`
+* Retornando o maior e menor valor de um vetor
+    * `max(vet);min(vet)`
+* Filtrando dados do vetor
+    * `vet[vet>3]` 
+* Mostrando a ordem dos valores no vetor
+    * `order(vet)`
+* Somando os valores de dois vetores
+    * `vet + vet`
+* Somando um valor a cada item do vetor
+    * `vet = vet + 5`
+* Retornando o tamanho do vetor
+    * `length(vet)`
+* Alterando o tamanho do vetor                
+    * `length(vet) = 12`
+* Alterando valores em um indice especifico do vetor 
+    * `vet[c(11,12)] = c(6,6)`
+
+---
+
+# **MATRIZES**
+
+* Criando uma matriz com dados distribuidos por linha (byrow=T)
+    * `matr = matrix(c(1,2,3,4,5,6), nrow=2,ncol=3,byrow=T)`
+* Criando uma matriz com dados distribuidos por coluna (byrow=F)
+    * `matr = matrix(c(1,2,3,4,5,6), nrow=2,ncol=3,byrow=F)`
+* Nomeando as linhas e colunas de uma matriz
+    * `dimanmes(matr) = list(c("L1","L2","L3"),c("C1","C2","C3"))`
+* Alterando um valor especifico da matriz
+    * `matr[1,2] = 0`
+* Retornando dimensões da matriz
+    * `dim(matr)`
+
+---
+
+# **LISTAS**
+
+> Lista são conjuntos de objetos de classe que podem ser diferentes, por exemplo matrizes, vetores e outras listas.
+
+* Criando uma lista
+    * `lista = list(USPersonalExpenditure, ability.cov$center, c(1,2,3,4,5), "Frase frase")` 
+* Colocando nome nos objetos de um lista de 4 itens
+    * `names(lista) = c("Matriz","VetZero","Vet12345","Texto")`        
+* Acessando o segundo objeto da lista
+    * `lista[[2]]`
+* Forma alternativa caso os itens da lista estejam nomeados
+    * `lista$nome-item`         
+
+---
+
+# **DATA FRAME**
+
+> Data frames se assemelham a tabelas, ou seja, podem trazer dados de tipos diferentes em suas colunas.
+
+* Criando um data frame
+    * `id = c(1,2,3)`
+    * `nome = c("Diogo","Maria","João")`
+    * `idade = c(39L,25L,53L)`
+    * `cadastro_ativo = c(T,T,F)`
+    * `limite_credito = c(5000.00,10550.50,0)` 
+    * `clientes = data.frame(id,nome,idade,cadastro_ativo,limite_credito)`
+* Verificando o tipo de uma coluna do data frame
+    * `class(clientes$idade)`
+* Alterando os dados de um data frame via R Editor
+    * `fix(clientes)`
+* Abrindo o R Editor para alterar os dados do data frame e atribuindo o resultado alterado à outra variável
+    * `clientes_edit = edit(clientes)`
+
+--- 
+
+# **SÉRIE TEMPORAL**
+
+> Coleção de observações feitas sequencialmente ao longo do tempo
+
+* Criando uma série temporal
+    * `serie_temp = ts(c(1:60), start=c(2010,1), end=c(2014,12), frequency = 12 )`
+
+--- 
+
+# **FATOR**
+
+> Fatores são vetores de elementos numerados.
+
+* Criando um fator de meses do ano
+    * ` meses = factor(c(1:12), labels = c('jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'), ordered = TRUE)`
+
 # **Manipulação de dados do tipo data (Date)**
 
 > Para criar uma variavel com conteúdo do tipo Date é necessário passar em formato de caracter e converter para date.
@@ -414,7 +505,6 @@ Retorna lista de grupos de dados instalados
 
 ---
 
-
 # **function `dim()`**
 
 > Retorna ou seta as dimensões de uma matriz
@@ -483,93 +573,37 @@ Gera um vetor (amostra) de tamanho 10 contendo valores 0,1 aleatorios cuja proba
 
 ----
 
-# **VETORES**
+# **function `mean()`**
 
-* Criando um vetor
-    * `vet = c(1,2,3,4,5,6)`
-* Ordenando um vetor
-    * `sort(vet)`
-* Retornando o maior e menor valor de um vetor
-    * `max(vet);min(vet)`
-* Filtrando dados do vetor
-    * `vet[vet>3]` 
-* Mostrando a ordem dos valores no vetor
-    * `order(vet)`
-* Somando os valores de dois vetores
-    * `vet + vet`
-* Somando um valor a cada item do vetor
-    * `vet = vet + 5`
-* Retornando o tamanho do vetor
-    * `length(vet)`
-* Alterando o tamanho do vetor                
-    * `length(vet) = 12`
-* Alterando valores em um indice especifico do vetor 
-    * `vet[c(11,12)] = c(6,6)`
+> Retorna a média de um conjunto de valores.
 
----
+## Sintaxe 
 
-# **MATRIZES**
+`mean(dados)`
 
-* Criando uma matriz com dados distribuidos por linha (byrow=T)
-    * `matr = matrix(c(1,2,3,4,5,6), nrow=2,ncol=3,byrow=T)`
-* Criando uma matriz com dados distribuidos por coluna (byrow=F)
-    * `matr = matrix(c(1,2,3,4,5,6), nrow=2,ncol=3,byrow=F)`
-* Nomeando as linhas e colunas de uma matriz
-    * `dimanmes(matr) = list(c("L1","L2","L3"),c("C1","C2","C3"))`
-* Alterando um valor especifico da matriz
-    * `matr[1,2] = 0`
-* Retornando dimensões da matriz
-    * `dim(matr)`
+## Exemplo
+
+`mean(c(1,2,3,4))`
+
+Retorna a média dos valores passados como parametros
+
+----
+
+# **functions attach(), detach() e with()**
+
+> **attach** coloca um conjunto de dados (data frame, list...) no "search path" do R e **detach** retira. Já o **with** utiliza o conjunto de dados passsado como primeira parametro para as expressões passadas no parametro seguinte.
+
+## Sintaxe
+
+- `attach(conj-dados)`
+- `detach(conj-dados)`
+- `with(conj-dados,expressao)`
+
+## Exemplo
+
+`attach(cars);` # Adiciona cars no search path <br>
+`mean(speed);` # utiliza a coluna speed sem precisar declarar cars$speed <br>
+`detach(cars);` # Retira do search path. <br>
+`with(cars,mean(speed))` # Utiliza cars na expressão mean(speed)<br>
 
 ---
-
-# **LISTAS**
-
-> Lista são conjuntos de objetos de classe que podem ser diferentes, por exemplo matrizes, vetores e outras listas.
-
-* Criando uma lista
-    * `lista = list(USPersonalExpenditure, ability.cov$center, c(1,2,3,4,5), "Frase frase")` 
-* Colocando nome nos objetos de um lista de 4 itens
-    * `names(lista) = c("Matriz","VetZero","Vet12345","Texto")`        
-* Acessando o segundo objeto da lista
-    * `lista[[2]]`
-* Forma alternativa caso os itens da lista estejam nomeados
-    * `lista$nome-item`         
-
----
-
-# **DATA FRAME**
-
-> Data frames se assemelham a tabelas, ou seja, podem trazer dados de tipos diferentes em suas colunas.
-
-* Criando um data frame
-    * `id = c(1,2,3)`
-    * `nome = c("Diogo","Maria","João")`
-    * `idade = c(39L,25L,53L)`
-    * `cadastro_ativo = c(T,T,F)`
-    * `limite_credito = c(5000.00,10550.50,0)` 
-    * `clientes = data.frame(id,nome,idade,cadastro_ativo,limite_credito)`
-* Verificando o tipo de uma coluna do data frame
-    * `class(clientes$idade)`
-* Alterando os dados de um data frame via R Editor
-    * `fix(clientes)`
-* Abrindo o R Editor para alterar os dados do data frame e atribuindo o resultado alterado à outra variável
-    * `clientes_edit = edit(clientes)`
-
---- 
-
-# **SÉRIE TEMPORAL**
-
-> Coleção de observações feitas sequencialmente ao longo do tempo
-
-* Criando uma série temporal
-    * `serie_temp = ts(c(1:60), start=c(2010,1), end=c(2014,12), frequency = 12 )`
-
---- 
-
-# **FATOR**
-
-> Fatores são vetores de elementos numerados.
-
-* Criando um fator de meses do ano
-    * ` meses = factor(c(1:12), labels = c('jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'), ordered = TRUE)`
