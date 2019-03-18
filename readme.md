@@ -313,6 +313,22 @@ ou
 
     O "as" pode ser usado com outros tipos.
 
+# **Conversão de tipos de dados**
+
+> Converter um tipo em outro 
+
+## Sintaxe
+`as.tipo-dado(dados)`
+
+## Exemplo
+
+`n1 = "10";` <br>
+`class(n1);` # Retorna character  <br>
+`n1 = as.numeric(n1)` <br>
+`class(n1);` # Retorna numeric <br>
+
+    Pode-se utilizar com outros tipo como data.frame, list, integer.
+
 ---
 
 # **VETORES**
@@ -554,6 +570,46 @@ Gera um vetor [1,10,15,20,25]
 `c(T,F,T,T,F)`
 
 Gera um vetor [TRUE,FALSE,TRUE,TRUE,FALSE]
+
+`c(1:100)`
+
+Gera um vetor com número de 1 a 100
+
+---
+
+# **function `seq()`**
+
+> Gera um vetor com um sequencia de valores.
+
+## Sintaxe
+
+`seq(from=num-ini,to=num-fim,by=intervalo)`
+
+## Exemplo
+
+s1 = seq(from=1, to=1000, by=10)
+
+Gera um vetor com numeros sequenciais de 1 a 1000 em intervalos de 10 ([10,20,30,40,....,1000])
+
+--- 
+
+# **function `scan()`**
+
+> Abre um prompt para digitação de valores que irão compor um vetor
+
+## Sintaxe
+
+`scan()`
+
+## Exemplo
+
+`v1 = scan()`
+
+Abre um prompt para digitar valores do tipo numeric que irão compor v1.
+
+`v2 = scan(what="character")`
+
+Abre um prompt para digitar valores do tipo character que irão compor o v2.
 
 ---
 
