@@ -665,6 +665,67 @@ Executa a mesma tarefa do exemplo anterior porem utiliza a função file.choose(
 
 ---
 
+# **SALVANDO ARQUIVO NO FORMATO RDATA**
+
+# Sintaxe
+`save(dados,file="nome-arquivo.rdata")`
+
+# Exemplo
+
+`v1 = seq(from=1,to=1000,by=5)`
+`save(v1, file="vetor.rdata")`
+
+Salva o vetor gerado em um arquivo no formato binário.
+
+---
+
+# **CARREGANDO ARQUIVOS NO FORMATO RDATA**
+
+## Sintaxe
+
+`load(nome-arquivo)`
+
+## Exemplo
+
+`load("vetor.rdata")`
+
+Carrega os dados do arquivo passado como parametro.
+
+---
+
+# **function list.files()**
+
+> Lista os arquivos e pastas de um diretório
+
+## Sintaxe 
+`list.files()`
+
+## Exemplo 
+
+`list.files()`
+
+Lista os arquivos do diretório de trabalho
+
+`list.files("/home/user/")`
+
+Lista os arquivos do diretório /home/user/
+
+---
+
+# **function head() e tail()**
+
+> Respectivamente mostram as primeiras e as ultimas linha de um conjunto de dados
+
+## Sintaxe
+`head(dados)`
+`tail(dados)`
+
+# Exemplo
+`head(t1)` # Retorna as primeiras linha de t1 <br>
+`tail(data1,n=4L)` # Retorna as últimas 4 linhas de data1 <br>
+
+---
+
 # **function `mean()`**
 
 > Retorna a média de um conjunto de valores.
