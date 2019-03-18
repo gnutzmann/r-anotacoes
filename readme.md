@@ -313,7 +313,7 @@ ou
 
     O "as" pode ser usado com outros tipos.
 
-# **Conversão de tipos de dados**
+# **CONVERSÃO DE TIPOS DE DADOS**
 
 > Converter um tipo em outro 
 
@@ -521,38 +521,6 @@ Retorna lista de grupos de dados instalados
 
 ---
 
-# **function `dim()`**
-
-> Retorna ou seta as dimensões de uma matriz
-
-## Sintaxe
-
-`dim(x)`
-
-## Exemplo
-
-`x = 1:12; dim(x) = c(3,4); dim(x);` 
-
-X recebe 12 valores aleatorios de 1 a 12, em seguida transforma-se esse vetor em uma matriz de 3 linha e 4 colunas. Por fim retorna o as dimensões da matriz gerada.
-
----
-
-# **function `summary()`**
-
-> Sumariza um objeto passado como argumento
-
-## Sintaxe 
-
-`summary(object)`
-
-## Exemplo
-
-`summary(iris)`
-
-Retorna um sumário de informações sobre a base de dados que acompanha a linguagem R denominada "iris".
-
----
-
 # **function `c()`**
 
 > combina os valores passados como parametros em um vetor ou lista
@@ -615,7 +583,7 @@ Abre um prompt para digitar valores do tipo character que irão compor o v2.
 
 # **function `sample()`**
 
-> Gera uma amostra de dados baseados nos parametros informados
+> Gera uma amostra de dados aleatórios baseados nos parametros informados
 
 ## Sintaxe 
 
@@ -625,11 +593,13 @@ Abre um prompt para digitar valores do tipo character que irão compor o v2.
 
 `sample(c(0,1), 10, replace = TRUE, prob = c(0.5,0.5))`
 
-Gera um vetor (amostra) de tamanho 10 contendo valores 0,1 aleatorios cuja probabilidade de ocorrer 0 é de 50% e 1 também de 50%
+Gera um vetor (amostra) de tamanho 10 contendo valores 0,1 aleatorios cuja probabilidade de ocorrer 0 é de 50% e 1 também de 50% e os dados não podem se repetir
+
+    set.seed(numero) gera uma seed de geração de números aleatórios fixa, passada como parâmetro.
 
 ----
 
-# **functions attach(), detach() e with()**
+# **functions `attach(), detach() e with()`**
 
 > **attach** coloca um conjunto de dados (data frame, list...) no "search path" do R e **detach** retira. Já o **with** utiliza o conjunto de dados passsado como primeira parametro para as expressões passadas no parametro seguinte.
 
@@ -693,7 +663,7 @@ Carrega os dados do arquivo passado como parametro.
 
 ---
 
-# **function list.files()**
+# **function `list.files()`**
 
 > Lista os arquivos e pastas de um diretório
 
@@ -712,7 +682,7 @@ Lista os arquivos do diretório /home/user/
 
 ---
 
-# **function head() e tail()**
+# **function `head() e tail()`**
 
 > Respectivamente mostram as primeiras e as ultimas linha de um conjunto de dados
 
@@ -723,6 +693,54 @@ Lista os arquivos do diretório /home/user/
 # Exemplo
 `head(t1)` # Retorna as primeiras linha de t1 <br>
 `tail(data1,n=4L)` # Retorna as últimas 4 linhas de data1 <br>
+
+---
+
+# **function `dim()`**
+
+> Retorna ou seta as dimensões de uma matriz
+
+## Sintaxe
+
+`dim(x)`
+
+## Exemplo
+
+`x = 1:12; dim(x) = c(3,4); dim(x);` 
+
+X recebe 12 valores aleatorios de 1 a 12, em seguida transforma-se esse vetor em uma matriz de 3 linha e 4 colunas. Por fim retorna o as dimensões da matriz gerada.
+
+---
+
+# **function `summary()`**
+
+> Sumariza um objeto passado como argumento
+
+## Sintaxe 
+
+`summary(object)`
+
+## Exemplo
+
+`summary(iris)`
+
+Retorna um sumário de informações sobre a base de dados que acompanha a linguagem R denominada "iris".
+
+---
+
+# **function `colnames() e rownames()`**
+
+> Retornam, respectivamente, o nome das colunas e das linhas de um conjunto de dados
+
+## Sintaxe 
+
+`colnames(dados)`
+`rownames(dados)`
+
+## Exemplo
+
+`colnames(iris)` # Retorna o nome das colunas de iris <br>
+`rownames(iris)` # Retorna o nome das linhas de iris <br>
 
 ---
 
@@ -741,3 +759,55 @@ Lista os arquivos do diretório /home/user/
 Retorna a média dos valores passados como parametros
 
 ----
+
+# **function `cumsum(), cumprod(), cummax(), cummin()`**
+
+> Retorna os valores acumulados somados, o produto, máximo ou mínimo respectivamente.
+
+## Sintaxe 
+`cumsum(x)`
+`cumprod(x)`
+`cummax(x)`
+`cummin(x)`
+
+## Exemplo
+
+`cumsum(c(1,2,3,4))` # retorna [1,3,6,10] <br>
+
+Retorna cumulativamente somadas do vetor passado.
+
+----
+
+# **function `apply()`**
+
+> Aplica, linha a linha ou coluna a coluna um função passada como parametro em um conjunto de dados. 
+
+## Sintaxe 
+
+`apply(dados,1|2|nome-coluna|nome-linha,funcao)`
+
+## Exemplo
+
+`apply(USPersonalExpenditure,1,median)` # Retorna média das linhas <br> 
+`apply(USPersonalExpenditure,2,median)` # Retorna média das colunas <br> 
+`apply(USPersonalExpenditure,2,sum)` # Retorna somatório das colunas <br> 
+`apply(USPersonalExpenditure,1,sum)` # Retorna somatório das linhas <br> 
+
+----
+
+# **function `table()`**
+
+> Cria uma tabela de contingência baseada nos colunas passadas como parametros.
+
+## Sintaxe 
+
+`table(col1,col2)`
+
+## Exemplo
+
+`table(infert$education,infert$induced)`
+
+Retorna os dados tabulados das colunas indicadas.
+
+----
+
