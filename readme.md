@@ -629,22 +629,6 @@ Gera um vetor (amostra) de tamanho 10 contendo valores 0,1 aleatorios cuja proba
 
 ----
 
-# **function `mean()`**
-
-> Retorna a média de um conjunto de valores.
-
-## Sintaxe 
-
-`mean(dados)`
-
-## Exemplo
-
-`mean(c(1,2,3,4))`
-
-Retorna a média dos valores passados como parametros
-
-----
-
 # **functions attach(), detach() e with()**
 
 > **attach** coloca um conjunto de dados (data frame, list...) no "search path" do R e **detach** retira. Já o **with** utiliza o conjunto de dados passsado como primeira parametro para as expressões passadas no parametro seguinte.
@@ -663,3 +647,36 @@ Retorna a média dos valores passados como parametros
 `with(cars,mean(speed))` # Utiliza cars na expressão mean(speed)<br>
 
 ---
+
+# **IMPORTANTO ARQUIVOS**
+
+## Sintaxe
+`read.table(arquivo,sep = char-separador,dec = "separador-decimal",header = T|F)`
+
+## Exemplo
+
+ `tab = read.table("arquivo.csv",sep = ";",dec = ".",header = T)`
+
+Importa o arquivo de nome "arquivo.csv com separador de campos sendo ponto e virgula, usando ponto como separador decimal e considerando a primeira linha como cabeçalho
+
+`tab = read.table(file.choose(),sep = ";",dec = ".",header = T)`
+
+Executa a mesma tarefa do exemplo anterior porem utiliza a função file.choose() para abrir uma caixa de dialogo para seleção do arquivo.
+
+---
+
+# **function `mean()`**
+
+> Retorna a média de um conjunto de valores.
+
+## Sintaxe 
+
+`mean(dados)`
+
+## Exemplo
+
+`mean(c(1,2,3,4))`
+
+Retorna a média dos valores passados como parametros
+
+----
