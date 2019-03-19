@@ -147,7 +147,7 @@ Carrega o arquivo "projeto-teste.RData".
 
 # function **`install.packages()`**
 
-> Instala os pacotes passados como parametros
+> Instala os pacotes passados como parâmetros
 
 ## Sintaxe 
 
@@ -163,7 +163,7 @@ Instala o pacote ggplot2 com todas suas dependências devido a passagem o parame
 
 # function **`remove.packages()`**
 
-> Remove os pacotes passados como parametros
+> Remove os pacotes passados como parâmetros
 
 ## Sintaxe 
 
@@ -195,7 +195,7 @@ Retorna os pacotes instalados
 
 # function **`library()`**
 
-> Carrega para o uso os pacotes passados como parametros
+> Carrega para o uso os pacotes passados como parâmetros
 
 ## Sintaxe
 
@@ -523,7 +523,7 @@ Retorna lista de grupos de dados instalados
 
 # **function `c()`**
 
-> combina os valores passados como parametros em um vetor ou lista
+> combina os valores passados como parâmetros em um vetor ou lista
 
 ## Sintaxe
 
@@ -583,7 +583,7 @@ Abre um prompt para digitar valores do tipo character que irão compor o v2.
 
 # **function `sample()`**
 
-> Gera uma amostra de dados aleatórios baseados nos parametros informados
+> Gera uma amostra de dados aleatórios baseados nos parâmetros informados
 
 ## Sintaxe 
 
@@ -756,9 +756,121 @@ Retorna um sumário de informações sobre a base de dados que acompanha a lingu
 
 `mean(c(1,2,3,4))`
 
-Retorna a média dos valores passados como parametros
+Retorna a média dos valores passados como parâmetros
 
 ----
+
+# **function `sd()`**
+
+> Retorna o desvio padrão de um conjunto de valores.
+
+## Sintaxe 
+
+`sd(dados)`
+
+## Exemplo
+
+`sd(c(1,2,3,4))`
+
+Retorna o desvio padrão do conjunto de valores passados como parâmetros
+
+----
+
+# **function `var()`**
+
+> Retorna o variância de um conjunto de valores.
+
+## Sintaxe 
+
+`var(dados)`
+
+## Exemplo
+
+`var(c(1,2,3,4))`
+
+Retorna o desvio padrão do conjunto de valores passados como parâmetros
+
+----
+
+# **function `rnorm()`**
+
+> Gera uma distribuição normal baseada nos parâmetros passados. 
+
+## Sintaxe 
+
+`rnorm(qtde-valores, mean = media, sd = desvio-padrao)`
+
+## Exemplo
+
+`rnorm(10, mean = 20, sd = 3)`
+
+Gera uma distribuição normal com 10 valores cuja média é 20 e o desvio padrão é 3.
+
+----
+
+# **function `rpois()`**
+
+> Gera uma distribuição de Poisson baseada nos parâmetros passados. 
+
+## Sintaxe 
+
+`rpois(qtde-valores,lambda=valor)`
+
+## Exemplo
+
+`rpois(10, lambda=4)`
+
+Gera uma distribuição de Poisson com 10 valores cuja lambda é 4.
+
+----
+
+# **function `rbinom()`**
+
+> Gera uma distribuição binomial baseada nos parâmetros passados. 
+
+## Sintaxe 
+
+`rbinom(dados,size=tamanho, prob=probabilidade)`
+
+## Exemplo
+
+`rpois(10, lambda=4)`
+
+Gera uma distribuição binomial.
+
+----
+
+# **function `shapiro.test()`**
+
+> Verifica se um conjunto de dados de uma dada variável aleatória é uma distribuição normal.
+
+## Sintaxe 
+
+`shapiro.test(dados)`
+
+## Exemplo
+
+`shapiro.test(rnorm(10, mean = 20, sd = 3))`
+
+Verifica se o resultado da função rnorm retornou uma distribuição normal.
+
+----
+
+# **function `cor()`**
+
+> Verifica se existe uma correlação entre os valores passados como parâmetros. 
+
+## Sintaxe 
+
+`cor(dados1,dados2)`
+
+## Exemplo
+
+`cor(women$height,women$weight)`
+
+Verifica se existe uma correlação entre os valores de women$height e women$weight
+
+---
 
 # **function `cumsum(), cumprod(), cummax(), cummin()`**
 
@@ -797,7 +909,7 @@ Retorna cumulativamente somadas do vetor passado.
 
 # **function `table()`**
 
-> Cria uma tabela de contingência baseada nos colunas passadas como parametros.
+> Cria uma tabela de contingência baseada nos colunas passadas como parâmetros.
 
 ## Sintaxe 
 
@@ -810,4 +922,3 @@ Retorna cumulativamente somadas do vetor passado.
 Retorna os dados tabulados das colunas indicadas.
 
 ----
-
