@@ -858,7 +858,7 @@ Verifica se o resultado da função rnorm retornou uma distribuição normal.
 
 # **function `cor()`**
 
-> Verifica se existe uma correlação entre os valores passados como parâmetros. 
+> Verifica se existe uma correlação entre os valores passados como parâmetros. Retorna um valor entre -1 e 1 para indicar a correlação. 
 
 ## Sintaxe 
 
@@ -869,6 +869,22 @@ Verifica se o resultado da função rnorm retornou uma distribuição normal.
 `cor(women$height,women$weight)`
 
 Verifica se existe uma correlação entre os valores de women$height e women$weight
+
+---
+
+# **function `lm()`**
+
+> Retorna um modelo de regressão linear.
+
+## Sintaxe 
+
+`lm(formula-modelo)`
+
+## Exemplo
+
+`lm(women$height ~ women$weight)`
+
+Gera um modelo de regressão linear de women$height e women$weight
 
 ---
 
