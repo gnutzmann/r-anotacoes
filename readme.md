@@ -938,3 +938,40 @@ Retorna cumulativamente somadas do vetor passado.
 Retorna os dados tabulados das colunas indicadas.
 
 ----
+
+# **GRÁFICOS**
+
+## **function `plot()`**
+
+### Exemplos
+* `plot(Orange$age,Orange$circumference)`
+* `plot(Orange$age,Orange$circumference, xlab = "Idade", ylab = "Circunferencia")`
+* `plot(Orange$age,Orange$circumference, xlab = "Idade", ylab = "Circunferencia", col = "blue", main = "Laranjeiras")`
+* `plot(Orange$age,Orange$circumference, xlab = "Idade", ylab = "Circunferencia", col = "blue", main = "Laranjeiras", pch = 20)`
+* `plot(Orange$age,Orange$circumference, xlab = "Idade", ylab = "Circunferencia", col = "blue", main = "Laranjeiras", pch = 24, type = "b")`
+<br>
+<br>
+* `plot(AirPassengers)`
+* `plot(Theoph[,1:3])`
+
+## **function `boxplot()`**
+
+### Exemplos
+* `boxplot(iris[,1:4],main = "Iris")`
+
+## **function `pie()`**
+
+### Exemplos
+
+* `dados = subset(USArrests,UrbanPop > 80)`
+* `pie(dados$Murder)`
+* `setores = paste(row.names(dados), dados[,1])`
+* `pie(dados$Murder, setores, main = "Taxa de assassinatos")`
+
+## **function `barplot()`**
+
+### Exemplos
+
+* `barplot(dados$Murder)`
+* `barplot(dados$Murder, name = row.names(dados),main="Assassinatos por Estado", xlab="Estados", ylab = "Assassinatos por 100 mil hab.")`
+* `barplot(dados$Murder, name = row.names(dados),main="Assassinatos por Estado", xlab="Estados", ylab = "Assassinatos por 100 mil hab.", las=2)`
