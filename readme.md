@@ -728,6 +728,50 @@ Retorna um sumário de informações sobre a base de dados que acompanha a lingu
 
 ---
 
+# **function `strata()`**
+
+> Gera uma amostra stratificada de um conjunto de dados 
+
+## Sintaxe 
+
+`strata(dados,colunas,size=c(proporcao, proporcao...),method="srswor")`
+
+## Exemplo
+
+`summary(infert)`
+
+    Calcula a proporção usando total da categoria dividido total de registro multipilicado pelo numero de amostras desejadas.
+
+    0->5 = 5
+    round(12/248*100)
+    6->11 = 48
+    round(120/248*100)
+    12+ = 47
+    round(116/248*100)
+
+`amostra = strata(infert,c("education"), size=c(5,48,47),method="srswor")`<br>
+`summary(amostra)`
+
+Retorna um sumário da amostra extratifica de infert. O parâmetro `method="srswor"` significa que a função gera amostras aleatórias sem reposição.
+
+---
+
+# **function `S.SY()`**
+
+> Cria uma amostra sistemática com inicio aleatório
+
+## Sintaxe 
+
+`S.SY(qtde-amostra,intervalo)`
+
+## Exemplo
+
+`S.SYS(20,2)`
+
+Em um total de 20 amostras gera uma inicial aleatoria e apartir dela gera uma a cada 2.
+
+---
+
 # **function `colnames() e rownames()`**
 
 > Retornam, respectivamente, o nome das colunas e das linhas de um conjunto de dados
