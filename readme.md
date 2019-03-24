@@ -712,22 +712,6 @@ X recebe 12 valores aleatorios de 1 a 12, em seguida transforma-se esse vetor em
 
 ---
 
-# **function `summary()`**
-
-> Sumariza um objeto passado como argumento
-
-## Sintaxe 
-
-`summary(object)`
-
-## Exemplo
-
-`summary(iris)`
-
-Retorna um sumário de informações sobre a base de dados que acompanha a linguagem R denominada "iris".
-
----
-
 # **function `strata()`**
 
 > Gera uma amostra stratificada de um conjunto de dados 
@@ -803,6 +787,55 @@ Em um total de 20 amostras gera uma inicial aleatoria e apartir dela gera uma a 
 Retorna a média dos valores passados como parâmetros
 
 ----
+
+# **function `median()`**
+
+> Retorna a mediana de um conjunto de valores.
+
+## Sintaxe 
+
+`median(dados)`
+
+## Exemplo
+
+`median(c(1,2,3,4,5))`
+
+Retorna a 3 que é o valor mediano do conjunto de dados passados.
+
+----
+
+
+# **function `quantile()`**
+
+> Retorna os quartis de um conjunto de valores.
+
+## Sintaxe 
+
+`quantile(dados)`
+
+## Exemplo
+
+`quantile(c(1,2,3,4,5))`
+
+Retorna os quartis do conjunto de dados passados.
+
+----
+
+# **function `summary()`**
+
+> Sumariza um objeto passado como argumento
+
+## Sintaxe 
+
+`summary(object)`
+
+## Exemplo
+
+`summary(iris)`
+
+Retorna um sumário de informações sobre a base de dados que acompanha a linguagem R denominada "iris".
+
+---
 
 # **function `sd()`**
 
